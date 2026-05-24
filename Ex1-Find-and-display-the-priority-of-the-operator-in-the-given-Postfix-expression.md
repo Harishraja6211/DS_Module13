@@ -1,81 +1,58 @@
-# EX 1a Display operator precedence in the infix expression.
-## DATE: 22/02/2025
+# EX3 Write a program to count the number of digits in an integer.
+# Developed by: T MOUNISH
+# RegisterNumber: 212223240098
+## DATE: 24/03/26
+
 ## AIM:
-To write a C program to find and display the priority of the operator in the given Postfix expression
+To write a java program to count the number of digits in an integer.
 
 ## Algorithm
-1. Start the program.
-2. Define the priority() function to return the priority of operators.
-3. Initialize the string containing operators and operands.
-4. Loop through each character in the string.
-5. For each operator, call the priority() function to determine its priority.
-6. Print the operator and its corresponding priority level.
-7. End. 
+2. Read an integer input num from the user.
+3. If num is equal to 0, then the number has 1 digit.
+4. Convert num to its absolute value to handle negative numbers.
+5. Initialize a counter variable count = 0.
+6. Repeat the following steps while num > 0:
+Divide num by 10 (integer division).
+Increment count by 1.
+7. After the loop ends, count will contain the number of digits.
+8.  Display the value of count.
+9. End the program.  
 
 ## Program:
 ```
 /*
-Program to find and display the priority of the operator in the given Postfix expression
-Developed by: T MOUNISH
-RegisterNumber:  212223240098
+Program to to count the number of digits in an integer
 */
-#include <stdio.h>
-#include<string.h>
-int priority(char x)
-{
-if(x == '&' || x == '|')
-return 1;
-if(x == '+' || x == '-')
-return 2;
-if(x == '*' || x == '/' || x == '%')
-return 3;
-if(x == '^')
-return 4;
-return 0;
-}
-int main()
-{
-int i,j;
-char ch[100]="(A*B)^C+(D%H)/F&G";
-for(i=0;i<strlen(ch);i++)
-{
-if(ch[i]=='+'||
-ch[i]=='-'||
-ch[i]=='*'||
-ch[i]=='/'||
-ch[i]=='%'||
-ch[i]=='^'||
-ch[i]=='&'||
-ch[i]=='|')
-{
-j=priority(ch[i]);
-switch(j)
-{
-case 1:
-printf("%c ---- > ",ch[i]);
-printf("Lowest Priority\n");
-break;
-case 2:
-printf("%c ---- > ",ch[i]);
-printf("Second Lowest Priority\n");
-break;
-case 3:
-printf("%c ---- > ",ch[i]);
-printf("Second Highest Priority\n");
-break;
-case 4:
-printf("%c ---- > ",ch[i]);
-printf("Highest Priority\n");
-break;
-}
-}
-}
-return 0;
+import java.util.Scanner;
+
+public class CountDigits {
+
+    public static int countDigits(int num) {
+        int count = 0;
+        if (num == 0) return 1; 
+        num = Math.abs(num);   
+        while (num > 0) {
+            count++;
+            num /= 10;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        int digits = countDigits(num);
+        System.out.println("Number of digits: " + digits);
+    }
 }
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/962cee50-7408-4417-85d4-6a60a36ed8c5)
+
+<img width="785" height="301" alt="image" src="https://github.com/user-attachments/assets/262f4a30-0311-4cd3-82de-b44843630170" />
+
+
 
 ## Result:
-Thus the C program to find and display the priority of the operator in the given Postfix expression is implemented successfully
+Thus, the Java program to to count the number of digits in an integer is implemented successfully.
