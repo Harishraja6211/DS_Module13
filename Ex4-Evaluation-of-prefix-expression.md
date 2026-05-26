@@ -1,76 +1,72 @@
-# Ex 1d Evaluation of prefix expression
-## DATE: 24/02/2025
+# Ex4 You are given a Java program that performs matrix addition. If Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension, what will be the nature (even/odd/mixed) of the resulting matrix?
 ## AIM:
-To write a C function to evaluate the given prefix expression using stack and print the output of the given prefix expression from the stack inside the function . 
+To write a java function to evaluate weather the given Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension and find the nature of resultant matrrix.
 
 ## Algorithm
-1. Start
-2. Initialize an empty stack s with a variable top for tracking the stack index.
-3. Define a push() function to add an element to the stack.
-4. Define a pop() function to remove and return the top element from the stack.
-5. In evalprefix(), loop through the given prefix expression from right to left.
-6. For each character, if it’s an operator (+, *), pop two operands from the stack, perform the
-operation, and push the result.
-7. If it's a digit, convert it to an integer and push it onto the stack; finally, print the result after
-the loop ends.
-8. End   
+1. Start the program.
+2. Read the dimensions of both matrices (rows and columns).
+3. Check whether Matrix A and Matrix B have the same dimensions.
+4. If not, display “Matrices are not of same dimension” and stop.
+5. Read Matrix A and check each element:
+6. If every element is odd, continue.
+7. If any element is even, mark A as invalid and stop further checking.
+8. If both matrices are valid, compute the resultant matrix (e.g., A + B or any operation specified).
+9. Determine the nature of the resultant matrix:
+10. If all elements are odd, print “Resultant matrix is an Odd Matrix”.
+11. If all elements are even, print “Resultant matrix is an Even Matrix”.
+12. Display the Resultant Matrix.
+13. Stop the program.
 
 ## Program:
 ```
-/*
-Program to evaluate the given prefix expression
+Program to ind the nature of resultant matrrix.
 Developed by: T MOUNISH
-RegisterNumber: 212223240098
+RegisterNumber:  212223240098
 */
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
-int s[50];
-int top=0;
-void push(int ch)
-{
-top++;
-s[top]=ch;
-}
-int pop()
-{
-int ch;
-ch=s[top];
-top=top-1;
-return(ch);
-}
-void evalprefix(char p[50])
-{
-int a,b,c,i;
-for(i=strlen(p)-1;i>=0;i--)
-{
-if(p[i]=='+')
-{
-a=pop();
-b=pop();
-c=a+b;
-push(c);
-}
-else if(p[i]=='*')
-{
-a=pop();
-b=pop();
-c=a*b;
-push(c);
-}
-else
-{
-push(p[i]-48);
-}
-}
-printf("%d",pop());
+import java.util.Scanner;
+
+public class MatrixAddition {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+
+        int[][] A = new int[rows][cols];
+        int[][] B = new int[rows][cols];
+        int[][] result = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                A[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                B[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = A[i][j] + B[i][j];
+            }
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+       
+    }
 }
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/6840c255-9ec0-462e-ba7b-6f4b4be23db1)
+<img width="422" height="624" alt="image" src="https://github.com/user-attachments/assets/389dd1b1-f2ce-4a47-8eec-13d0ebbb8316" />
 
 
 ## Result:
-Thus, the C program to evaluate the prefix expression using stack and print the output of the given prefix expression from the stack inside the function is implemented successfully.
+Thus, the java program to evaluate weather the given Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension and find the nature of resultant matrrix is implemented successfully.
