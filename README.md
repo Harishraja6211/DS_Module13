@@ -291,44 +291,44 @@ Program toto Count the number of inversions in an array where inversion is defin
 Developed by: T MOUNISH
 RegisterNumber:  212223240098
 */
-
 import java.util.Scanner;
 
-public class CountInversions
-{
-    public static int countInversions(int[] arr)
-{
-        int n = arr.length;
-        int count = 0;
-        for (int i = 0; i < n - 1; i++)
-{
-            for (int j = i + 1; j < n; j++)
-{
-                if (arr[i] > arr[j]) {
-                    count++; 
-                }
-            }
-        }
+public class FibonacciSeries {
 
-        return count;
+    static int fibonacciRecursive(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+    }
+
+    static void fibonacciIterative(int n) {
+        int first = 0, second = 1;
+        System.out.print(first + " " + second + " ");
+        for (int i = 2; i < n; i++) {
+            int next = first + second;
+            System.out.print(next + " ");
+            first = second;
+            second = next;
+        }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter number of elements: ");
         int n = sc.nextInt();
 
-        int[] arr = new int[n];
-
-        System.out.println("Enter " + n + " elements:");
+        System.out.println("Fibonacci Series using Recursion:");
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+            System.out.print(fibonacciRecursive(i) + " ");
         }
 
-        int inversions = countInversions(arr);
+        System.out.println("\n");
 
-        System.out.println("Number of inversions in the array: " + inversions);
+        System.out.println("Fibonacci Series using Iteration:");
+        if (n == 1) {
+            System.out.println("0");
+        } else if (n >= 2) {
+            fibonacciIterative(n);
+        }
 
         sc.close();
     }
