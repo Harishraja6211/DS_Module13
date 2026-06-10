@@ -21,8 +21,7 @@ Else return min(arr[index], findMin(arr, index + 1))
 ```
 /*
 Program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
-Developed by: T MOUNISH
-RegisterNumber:  212223240098
+
 */
 
 import java.util.*;
@@ -80,8 +79,7 @@ To write a Java program to Count how many times a number appears in an array rec
 ```
 /*
 Program Count how many times a number appears in an array recursively.
-Developed by: T MOUNISH
-RegisterNumber:  212223240098
+
 */
 
 import java.util.Scanner;
@@ -159,8 +157,7 @@ To write a java program to implement Tower of Hanoi
 ```
 /*
 Program to to count the number of digits in an integer
-Developed by: T MOUNISH
-RegisterNumber:  212223240098
+
 */
 import java.util.Scanner;
 
@@ -252,8 +249,7 @@ To write a java function to evaluate weather the given Matrix A has all odd numb
 ## Program:
 ```
 Program to ind the nature of resultant matrrix.
-Developed by: T MOUNISH
-RegisterNumber:  212223240098
+
 */
 import java.util.Scanner;
 
@@ -325,8 +321,7 @@ To write a Java program  to Count the number of inversions in an array where inv
 ```
 /*
 Program toto Count the number of inversions in an array where inversion is defined as: arr[i] > arr[j] and i < j
-Developed by: T MOUNISH
-RegisterNumber:  212223240098
+
 */
 import java.util.Scanner;
 
